@@ -2,6 +2,10 @@
 import { readFileSync } from "fs";
 import path from "path";
 
+export const dynamic = "force-static";
+
+const BASE_URL = "https://microsave-consulting.github.io/use_cases_next";
+
 export default function sitemap() {
   const data = JSON.parse(
     readFileSync(
@@ -10,14 +14,14 @@ export default function sitemap() {
     ),
   );
   return [
-    { url: "https://yoursite.com", priority: 1.0 },
+    { url: BASE_URL, priority: 1.0 },
     {
-      url: "https://yoursite.com/library",
+      url: `${BASE_URL}/library`,
       priority: 0.9,
       changeFrequency: "daily",
     },
     ...data.map((uc) => ({
-      url: `https://yoursite.com/use-cases/${uc.ID ?? uc.Id}`,
+      url: `${BASE_URL}/use-cases/${uc.ID ?? uc.Id}`,
       lastModified: new Date(uc.Modified ?? Date.now()),
       changeFrequency: "weekly",
       priority: 0.8,
