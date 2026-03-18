@@ -28,5 +28,9 @@
     "eslint-config-next": "16.1.7",
     "postcss": "^8.5.8",
     "tailwindcss": "^4.2.1"
-  }
+  },
+  "scripts": {
+  "export": "next build",
+  "deploy": "next build && touch out/.nojekyll"
+}
 }
