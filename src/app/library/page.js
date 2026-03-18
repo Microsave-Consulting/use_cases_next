@@ -1,6 +1,7 @@
 // src/app/library/page.js
 import { readFileSync } from "fs";
 import path from "path";
+import { Suspense } from "react";
 import UseCaseLibrary from "@/components/UseCaseLibrary";
 
 export const metadata = {
@@ -27,5 +28,9 @@ function getData() {
 
 export default function LibraryPage() {
   const { useCases, filterConfig } = getData();
-  return <UseCaseLibrary initialData={useCases} filterConfig={filterConfig} />;
+  return (
+    <Suspense fallback={null}>
+      <UseCaseLibrary initialData={useCases} filterConfig={filterConfig} />
+    </Suspense>
+  );
 }
