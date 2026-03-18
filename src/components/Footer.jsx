@@ -41,7 +41,7 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <img
-              src="/assets/msc-logo.svg"
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/assets/msc-logo.svg`}
               alt="MSC"
               style={{
                 height: 30,
@@ -66,14 +66,14 @@ export default function Footer() {
             <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
               <a href="#" aria-label="LinkedIn">
                 <img
-                  src="/assets/li_white.svg"
+                  src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/assets/li_white.svg`}
                   alt="LinkedIn"
                   style={{ width: 28, height: 28 }}
                 />
               </a>
               <a href="#" aria-label="X">
                 <img
-                  src="/assets/x_white.svg"
+                  src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/assets/x_white.svg`}
                   alt="X"
                   style={{ width: 28, height: 28 }}
                 />

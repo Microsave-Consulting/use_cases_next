@@ -308,7 +308,7 @@ export default function Header() {
               className="inline-flex items-center no-underline shrink-0"
             >
               <img
-                src="/assets/msc-logo.svg"
+                src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/assets/msc-logo.svg`}
                 alt="MSC"
                 style={{ height: 36, width: "auto", display: "block" }}
               />
