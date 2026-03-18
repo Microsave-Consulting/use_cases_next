@@ -2,7 +2,6 @@
 // src/components/MapPageClient.jsx
 import { useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
-import Image from "next/image";
 import UseCaseDotMap from "./UseCaseDotMap";
 import UseCaseSectorPie from "@/widgets/UseCaseSectorPie";
 
@@ -275,8 +274,8 @@ function TopSectorCard({ sector, onClick }) {
             fontFamily: FONT,
           }}
         >
-          <Image
-            src="/assets/folder_blue.svg"
+          <img
+            src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/assets/folder_blue.svg`}
             alt=""
             width={18}
             height={18}
@@ -297,8 +296,8 @@ function TopSectorCard({ sector, onClick }) {
             fontFamily: FONT,
           }}
         >
-          <Image
-            src="/assets/loc_pin_blue.svg"
+          <img
+            src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/assets/loc_pin_blue.svg`}
             alt=""
             width={18}
             height={18}
@@ -419,22 +418,22 @@ export default function MapPageClient({
 
   const STAT_ITEMS = [
     {
-      icon: "/assets/loc_pin_blue.svg",
+      icon: `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/assets/loc_pin_blue.svg`,
       value: `${formatInt(stats.countries)}+`,
       label: "COUNTRIES",
     },
     {
-      icon: "/assets/sectors_left.svg",
+      icon: `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/assets/sectors_left.svg`,
       value: `${formatInt(stats.sectors)}+`,
       label: "SECTORS",
     },
     {
-      icon: "/assets/uc_left.svg",
+      icon: `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/assets/uc_left.svg`,
       value: formatInt(stats.useCases),
       label: "USE CASES",
     },
     {
-      icon: "/assets/folder_blue.svg",
+      icon: `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/assets/folder_blue.svg`,
       value: formatInt(stats.hackathons),
       label: "HACKATHONS",
     },
@@ -598,7 +597,7 @@ export default function MapPageClient({
                         }}
                         aria-hidden="true"
                       >
-                        <Image
+                        <img
                           src={s.icon}
                           alt=""
                           width={28}
